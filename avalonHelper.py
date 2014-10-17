@@ -79,7 +79,7 @@ class AvalonHelperCompletionsPackageEventListener(sublime_plugin.EventListener):
     def on_query_completions(self, view, prefix, locations):
         select = view.sel()[0]
         self.view = view
-        indent = self.get_indent()
+        indent = self.get_indent(len(prefix))
         if select.empty():
             if prefix in widgetList:
                 replacer = widget_place(prefix, True, indent)
@@ -98,8 +98,13 @@ class AvalonHelperCompletionsPackageEventListener(sublime_plugin.EventListener):
                 return _list
         return None
 
-    def get_indent(self):
-        prevline = self.view.substr(self.view.line(self.view.sel()[0])).replace("\t", "    ").strip()
+    def get_indent(self, length=0):
+        nowLine = self.view.line(self.view.sel()[0])
+        prevline = self.view.substr(nowLine).replace("\t", "    ").strip()
+        ## 加个判断，如果本身已经在行首就不要做什么了
+        left = self.view.substr(sublime.Region(nowLine.a, self.view.sel()[0].a-length)).strip()
+        if not left:
+            return ''
         tabs = indexLike.findall(prevline)
         if tabs:
             c = 0
