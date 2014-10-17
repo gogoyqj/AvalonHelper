@@ -1,0 +1,8 @@
+欢迎试用avalon Completion plugin for sublime 3, tests pass
+====
+
+v1.0.0 
+
+popup & tab support
+
+====
