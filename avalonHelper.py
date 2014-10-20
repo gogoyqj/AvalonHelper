@@ -58,14 +58,12 @@ def on_load():
             widgetList[loop] = v
             specialList.append(v)
         loop = loop + 1
-        _widgetList.append((v + "\tWidget", widget_place(v, True)))
+        _widgetList.append(("widget " + v + "\t组件", widget_place(v, True)))
     for v in msAttrList:
         _msAttrList.append((v + "\tbind", "" + v + "=\"${1:}\""))
     for v in dataAttrList:
         _dataAttrList.append((v + "\tbind", "" + v + "=\"${1:}\""))
     
-def create_select(view, _from, to):
-    pass
 
 # define parttens
 msLike = re.compile(r"^ms")
@@ -73,6 +71,8 @@ msWidget = re.compile(r"^ms\-w[^\s\"\']+")
 dataLike = re.compile(r"^d(ata\-)?")
 blankLike=  re.compile(r"[\s\"\']+")
 indexLike= re.compile(r"^[^<\s\n]+\s")
+# add ms-widget partten
+widgetLike = re.compile(r"^w[idget]")
 
 class AvalonHelperCompletionsPackageEventListener(sublime_plugin.EventListener):
 
@@ -81,10 +81,19 @@ class AvalonHelperCompletionsPackageEventListener(sublime_plugin.EventListener):
         self.view = view
         indent = self.get_indent(len(prefix))
         if select.empty():
+            if widgetLike.match(prefix):
+                if not indent:
+                    return _widgetList
+                _list = []
+                for i,v in _widgetList:
+                    _list.append((i, indent + v))
+                return _list;
             if prefix in widgetList:
                 replacer = widget_place(prefix, True, indent)
                 return [(prefix + "\tWidget", replacer)]
             if prefix == "m" or msLike.match(prefix):
+                if not indent:
+                    return _msAttrList
                 _list = []
                 for i,v in _msAttrList:
                     _list.append((i, indent + v ))
