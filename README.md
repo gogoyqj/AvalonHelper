@@ -8,7 +8,7 @@ Sublime Avalon Completion Package
 -------
 how to use
 
-	1，git clone code to sublime 3/data/packages/AvalonHelper
+	1，git clone code to sublime 3/data/packages/AvalonHelper - 注意：一定是放在插件默认的安装目录下，比如是C:\Users\username\AppData\Roaming\Sublime Text 3\Packages\AvalonHelper
 
 	2，ms召唤出属性绑定，组件名字可以召唤出组件自动完成，data召唤出data绑定，data-组件名字召唤出组件属性自动完成(暂时未提供组件属性、接口等字典)
 
