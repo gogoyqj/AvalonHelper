@@ -3,6 +3,7 @@ import sublime_plugin
 import re
 import sys
 import os
+import webbrowser
 
 BASE_PATH = os.path.abspath(os.path.dirname(__file__))
 PACKAGES_PATH = sublime.packages_path() or os.path.dirname(BASE_PATH)
@@ -132,7 +133,9 @@ class AvalonHelperCompletionsPackageEventListener(sublime_plugin.EventListener):
 
 # command
 class HelperCommand(sublime_plugin.TextCommand):
-    def run(self, edit, sub_words = False):
+    def run(self, edit, type): # 打开文档
+        url = settings.get(type)
+        webbrowser.open(url)
         pass
 
 if int(sublime.version()) < 3000:

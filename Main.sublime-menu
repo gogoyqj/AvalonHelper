@@ -20,9 +20,33 @@
                                 "args": {"file": "${packages}/AvalonHelper/helper.txt"},
                                 "caption": "设置Avalon字典"
                             },
+                            {
+                                "command": "open_file",
+                                "args":
+                                {
+                                    "file": "avalonHelper.sublime-settings"
+                                },
+                                "caption": "设置Avalon Helper"
+                            },
+                            {
+                                "keys": ["ctrl+shift+1"],
+                                "command": "helper",
+                                "args": {
+                                    "type": "avalon"
+                                },
+                                "caption": "avalon文档"
+                            },
+                            {
+                                "keys": ["ctrl+shift+2"],
+                                "command": "helper",
+                                "args": {
+                                    "type": "oniui"
+                                },
+                                "caption": "oniui文档"
+                            },
                             { "caption": "-" }
                         ]
-                    }
+                    },
                 ]
             }
         ]

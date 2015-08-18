@@ -1,5 +1,6 @@
 {
     // 自动完成后换行，例如选中了ms-controller => "\n"ms-ms-controller
     "autoBr": false,
-    "test": "test2"
+    "oniui": "http://ued.qunar.com/oniui/index.html#avalon.accordion.doc.html",
+    "avalon": "http://avalonjs.github.io/"
 }
