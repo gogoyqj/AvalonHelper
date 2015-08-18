@@ -41,6 +41,10 @@ def on_load():
 
     parts = all_the_text.split("\n")
 
+    global settings
+
+    settings = sublime.load_settings("avalonHelper.sublime-settings")
+
     global _widgetList
     global _msAttrList
     global _dataAttrList
@@ -108,6 +112,8 @@ class AvalonHelperCompletionsPackageEventListener(sublime_plugin.EventListener):
         return None
 
     def get_indent(self, length=0):
+        if not settings.get("autoBr"):
+            return ''
         nowLine = self.view.line(self.view.sel()[0])
         prevline = self.view.substr(nowLine).replace("\t", "    ").strip()
         ## 加个判断，如果本身已经在行首就不要做什么了
