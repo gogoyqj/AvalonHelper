@@ -14,7 +14,7 @@ how to use
 		
 		C:\Users\username\AppData\Roaming\Sublime Text 3\Packages\AvalonHelper
 		
-		Mac则通过“首选项【preferences】 -> 浏览程序包【brow packages】”打开安装目录，直接拷贝过来，ps：avalonHelper的Main.sublime-menu设置可能会修改menu的效果，比如纯英文界面多出一个首选项的汉子item来 = =
+		Mac则通过“首选项【preferences】 -> 浏览程序包【brow packages】”打开安装目录，直接拷贝过来，ps：avalonHelper的Main.sublime-menu设置可能会修改menu的效果，比如纯英文界面多出一个首选项的汉字item来 = =
 
 	2，ms召唤出属性绑定，组件名字可以召唤出组件自动完成，data召唤出data绑定，data-组件名字召唤出组件属性自动完成(暂时未提供组件属性、接口等字典)
 
@@ -23,6 +23,8 @@ how to use
 
 -------
 time line
+
+2015.8.18 - 添加配置功能、文档入口
 
 2014.10.17 - 修复多次换行缩进 bug
 
