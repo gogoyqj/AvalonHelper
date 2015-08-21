@@ -34,17 +34,11 @@ def widget_place(widgetName, is_completion = True, indents = ""):
 # load syntax
 def on_load():
     path = BASE_PATH
-    languagefile = open("./helper.txt")
-    try:
-         all_the_text = languagefile.read()
-    finally:
-         languagefile.close()
-
-    parts = all_the_text.split("\n")
+    languagefile = sublime.load_settings("helper.sublime-settings")
 
     global settings
 
-    settings = sublime.load_settings("./avalonHelper.sublime-settings")
+    settings = sublime.load_settings("avalonHelper.sublime-settings")
 
     global _widgetList
     global _msAttrList
@@ -53,9 +47,9 @@ def on_load():
     global msAttrList
     global dataAttrList
 
-    msAttrList = parts[0].split(",")
-    widgetList = parts[1].split(",")
-    dataAttrList = parts[2].split(",")
+    msAttrList = languagefile.get("ms").split(",")
+    widgetList = languagefile.get("widget").split(",")
+    dataAttrList = languagefile.get("data").split(",")
     loop = 0
     for v in widgetList:
         if v.count("="):
