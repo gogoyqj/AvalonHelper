@@ -17,7 +17,7 @@
                         [
                             {
                                 "command": "open_file",
-                                "args": {"file": "${packages}/AvalonHelper/helper.txt"},
+                                "args": {"file": "./helper.txt"},
                                 "caption": "设置Avalon字典"
                             },
                             {
