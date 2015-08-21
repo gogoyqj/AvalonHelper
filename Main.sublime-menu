@@ -17,14 +17,14 @@
                         [
                             {
                                 "command": "open_file",
-                                "args": {"file": "${packages}/avalonHelper/helper.sublime-settings"},
+                                "args": {"file": "${packages}/AvalonHelper/helper.sublime-settings"},
                                 "caption": "设置Avalon字典"
                             },
                             {
                                 "command": "open_file",
                                 "args":
                                 {
-                                    "file": "${packages}/avalonHelper/avalonHelper.sublime-settings"
+                                    "file": "${packages}/AvalonHelper/avalonHelper.sublime-settings"
                                 },
                                 "caption": "设置Avalon Helper"
                             },
