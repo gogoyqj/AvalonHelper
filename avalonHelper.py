@@ -34,7 +34,7 @@ def widget_place(widgetName, is_completion = True, indents = ""):
 # load syntax
 def on_load():
     path = BASE_PATH
-    languagefile = open(path + "/" + 'helper.txt')
+    languagefile = open("./helper.txt")
     try:
          all_the_text = languagefile.read()
     finally:
