@@ -16,7 +16,7 @@ how to use
 		
 		Mac则通过“首选项【preferences】 -> 浏览程序包【brow packages】”打开安装目录，直接拷贝过来，ps：avalonHelper的Main.sublime-menu设置可能会修改menu的效果，比如纯英文界面多出一个首选项的汉字item来 = =
 		
-	1.1 用package controll安装：
+	1.1 用package controll安装【暂时不要这样做，这样配置就是只读的了。。。】：
 	references -> package controll -> add repositoty -> 输入https://github.com/gogoyqj/AvalonHelper
 	
 	references -> package controll -> install package -> 等待之后，点击弹出的Avalon Helper，完成安装
