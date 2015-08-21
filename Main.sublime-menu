@@ -24,7 +24,7 @@
                                 "command": "open_file",
                                 "args":
                                 {
-                                    "file": "avalonHelper.sublime-settings"
+                                    "file": "./avalonHelper.sublime-settings"
                                 },
                                 "caption": "设置Avalon Helper"
                             },

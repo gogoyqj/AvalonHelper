@@ -44,7 +44,7 @@ def on_load():
 
     global settings
 
-    settings = sublime.load_settings("avalonHelper.sublime-settings")
+    settings = sublime.load_settings("./avalonHelper.sublime-settings")
 
     global _widgetList
     global _msAttrList
